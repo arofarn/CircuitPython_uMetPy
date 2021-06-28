@@ -2,6 +2,8 @@
 # Distributed under the terms of the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 
+# pylint: disable=line-too-long
+
 r"""A collection of meteorologically significant constant and thermophysical property values.
 
 Earth
@@ -70,52 +72,55 @@ molecular_weight_ratio   :math:`\epsilon`  epsilon     :math:`\text{None}`      
 .. [8] [Picard2008]_
 """  # noqa: E501
 
+# pylint: enable=line-too-long
+
+# pylint: disable=invalid-name
+
 # Earth
-earth_gravity = g = 9.80665                         # 'm / s^2'
-Re = earth_avg_radius = 6371008.7714                # 'm'
-G = gravitational_constant = 6.67430e-11            # 'm^3 / kg / s^2'
+earth_gravity = g = 9.80665  # 'm / s^2'
+Re = earth_avg_radius = 6371008.7714  # 'm'
+G = gravitational_constant = 6.67430e-11  # 'm^3 / kg / s^2'
 GM = geocentric_gravitational_constant = 3986005e8  # 'm^3 / s^2'
-omega = earth_avg_angular_vel = 7292115e-11         # 'rad / s'
-d = earth_sfc_avg_dist_sun = 149597870700.          # 'm'
-S = earth_solar_irradiance = 1360.8                 # 'W / m^2'
-delta = earth_max_declination = 23.45               # 'degrees'
-earth_orbit_eccentricity = 0.0167                   # 'dimensionless'
+omega = earth_avg_angular_vel = 7292115e-11  # 'rad / s'
+d = earth_sfc_avg_dist_sun = 149597870700.0  # 'm'
+S = earth_solar_irradiance = 1360.8  # 'W / m^2'
+delta = earth_max_declination = 23.45  # 'degrees'
+earth_orbit_eccentricity = 0.0167  # 'dimensionless'
 earth_mass = me = geocentric_gravitational_constant / gravitational_constant
 
 # molar gas constant
-R = 8.314462618     # 'J / mol / K'
+R = 8.314462618  # 'J / mol / K'
 
 # Water
-Mw = water_molecular_weight = 18.015268     # 'g / mol'
+Mw = water_molecular_weight = 18.015268  # 'g / mol'
 Rv = water_gas_constant = R / Mw
-rho_l = density_water = 999.97495           # 'kg / m^3'
-wv_specific_heat_ratio = 1.330              # 'dimensionless'
+rho_l = density_water = 999.97495  # 'kg / m^3'
+wv_specific_heat_ratio = 1.330  # 'dimensionless'
 Cp_v = wv_specific_heat_press = (
     wv_specific_heat_ratio * Rv / (wv_specific_heat_ratio - 1)
 )
 Cv_v = wv_specific_heat_vol = Cp_v / wv_specific_heat_ratio
-Cp_l = water_specific_heat = 4.2194         # 'kJ / kg / K'
-Lv = water_heat_vaporization = 2.50084e6    # 'J / kg'
-Lf = water_heat_fusion = 3.337e5            # 'J / kg'
-Cp_i = ice_specific_heat = 2090             # 'J / kg / K'
-rho_i = density_ice = 917                   # 'kg / m^3'
+Cp_l = water_specific_heat = 4.2194  # 'kJ / kg / K'
+Lv = water_heat_vaporization = 2.50084e6  # 'J / kg'
+Lf = water_heat_fusion = 3.337e5  # 'J / kg'
+Cp_i = ice_specific_heat = 2090  # 'J / kg / K'
+rho_i = density_ice = 917  # 'kg / m^3'
 
 # Dry air
-Md = dry_air_molecular_weight = 28.96546e-3 # 'kg / mol'
+Md = dry_air_molecular_weight = 28.96546e-3  # 'kg / mol'
 Rd = dry_air_gas_constant = R / Md
-dry_air_spec_heat_ratio = 1.4               # 'dimensionless'
+dry_air_spec_heat_ratio = 1.4  # 'dimensionless'
 Cp_d = dry_air_spec_heat_press = (
     dry_air_spec_heat_ratio * Rd / (dry_air_spec_heat_ratio - 1)
 )
 Cv_d = dry_air_spec_heat_vol = Cp_d / dry_air_spec_heat_ratio
-#TODO : check unit conversion
-rho_d = dry_air_density_stp = (1000., 'mbar') / (Rd * 273.15, 'K'))
-).to('kg / m^3')
+# TODO : check unit conversion
+# rho_d = dry_air_density_stp = (1000., 'mbar') / (Rd * 273.15, 'K')))  # 'kg / m^3'
 
 # General meteorology constants
-P0 = pot_temp_ref_press = 1000.     # 'mbar'
-#TODO : check unit conversion
-kappa = poisson_exponent = (Rd / Cp_d).to('dimensionless')
+P0 = pot_temp_ref_press = 1000.0  # 'mbar'
+# TODO : check unit conversion
+kappa = poisson_exponent = Rd / Cp_d  # 'dimensionless'
 gamma_d = dry_adiabatic_lapse_rate = g / Cp_d
-#TODO : check unit conversion
-epsilon = molecular_weight_ratio = (Mw / Md).to('dimensionless')
+# TODO : check unit conversion
+epsilon = molecular_weight_ratio = Mw / Md  # 'dimensionless'
