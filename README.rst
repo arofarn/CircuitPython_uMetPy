@@ -28,9 +28,7 @@ Come without numpy, pint (units), matplotlib or other "big" library support.
 As pint is not supported, the SI units are used.
 
 
-# Sources :
-
-MetPy : https://unidata.github.io/MetPy/latest/index.html
+Original project : `MetPy <https://unidata.github.io/MetPy/latest/index.html>`_
 
 Dependencies
 =============
@@ -46,8 +44,14 @@ This is easily achieved by downloading
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the
-examples folder and be included in docs/examples.rst.
+.. code-block:: python3
+
+    import umetpy.constants
+
+    print("List of all constants:\n")
+    for cst in dir(umetpy.constants):
+        if cst[0] != "_":
+            print("{:25s} = {:f}".format(cst, eval("{}.{}".format("umetpy.constants", cst))))
 
 Contributing
 ============
