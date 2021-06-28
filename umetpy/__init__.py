@@ -1,7 +1,6 @@
-# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
 # SPDX-FileCopyrightText: Copyright (c) 2021 Arofarn
 #
-# SPDX-License-Identifier: BSD-3.0-Clause
+# SPDX-License-Identifier: BSD-3-Clause
 """
 `umetpy`
 ================================================================================
