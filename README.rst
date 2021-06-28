@@ -13,7 +13,7 @@ Introduction
 
 
 .. image:: https://github.com/arofarn/CircuitPython_uMetPy/workflows/Build%20CI/badge.svg
-    :target: https://github.com/arofarn/CircuitPython_Org_uMetPy/actions
+    :target: https://github.com/arofarn/CircuitPython_uMetPy/actions
     :alt: Build Status
 
 
